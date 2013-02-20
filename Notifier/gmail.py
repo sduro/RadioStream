@@ -1,16 +1,8 @@
 #!/usr/bin/env python
-
-import time
-#from RPi import GPIO, feedparser
-
-import RPi.GPIO as GPIO, feedparser
-
-USERNAME="sergiduro@gmail.com"
-PASSWORD="QDdKRnpU"
-
-#GPIO_PIN=12
-#GPIO.setmode(GPIO.BOARD)
-#GPIO.setup(GPIO_PIN,GPIO.OUT)
+import feedparser
+ 
+USERNAME = "sergiduro@gmail.com"
+PASSWORD = "QDdKrnpU"
  
 response = feedparser.parse("https://" + USERNAME + ":" + PASSWORD + "@mail.google.com/gmail/feed/atom")
 unread_count = int(response["feed"]["fullcount"])
