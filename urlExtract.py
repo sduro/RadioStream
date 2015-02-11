@@ -17,12 +17,6 @@ class LinksExtractor(htmllib.HTMLParser):
 
 def main():
     format = formatter.NullFormatter()
-    htmlparser = nameExtractor(format)
-    data = urllib.urlopen("http://www.listenlive.eu/spain.html")
-    htmlparser.feed(data.read())
-    htmlparser.close()
-    names = htmlparser.get_links()
-    format = formatter.NullFormatter()
     htmlparser = LinksExtractor(format)
     data = urllib.urlopen("http://www.listenlive.eu/spain.html")
     htmlparser.feed(data.read())
