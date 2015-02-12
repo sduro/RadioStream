@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<emisora name="RNE 1" url="http://radiolive.rtve.es/rne.m3u" id="1">
+	</emisora>
+	<emisora name="RNE Clasica"
+		url="http://radiolive.rtve.es/radioclasica.m3u" id="2">
+	</emisora>
+	<emisora name="RNE 3" url="http://radiolive.rtve.es/radio3.m3u"
+		id="3">
+	</emisora>
+	<emisora name="Activa FM"
+		url="http://emisorasmusicales.com:8000/activafm.mp3.m3u" id="4">
+	</emisora>
+	<emisora name="AMC Radio 5"
+		url="http://srv0410.radiostreaming.es/tunein.php/amcradi1/playlist.pls"
+		id="5">
+	</emisora>
+	<emisora name="Cadena 100"
+		url="mms://a14.l12014932013.c120149.l.lm.akamaistream.net/D/14/120149/v0001/reflector:32013"
+		id="6">
+	</emisora>
+	<emisora name="Cadena Dial"
+		url="http://provisioning.streamtheworld.com/pls/CADENADIAL.pls"
+		id="7">
+	</emisora>
+	<emisora name="Cadena Ser"
+		url="http://playerservices.streamtheworld.com/pls/CADENASER.pls"
+		id="8">
+	</emisora>
+	<emisora name="CatRadio"
+		url="http://www.catradio.cat/directes/catradio_http.m3u"
+		id="9">
+	</emisora>
+	<emisora name="CatInfo"
+		url="http://www.catradio.cat/directes/catinfo_http.m3u"
+		id="10">
+	</emisora>
+	<emisora name="CatMusica"
+		url="http://www.catmusica.cat/directes/catmusica_http.m3u"
+		id="11">
+	</emisora>
+	<emisora name="Com Radio"
+		url="http://comradio-streaming.gnuine.com:8100/mac22.m3u"
+		id="12">
+	</emisora>
+	<emisora name="Europa FM"
+		url="http://a3_audio_te_cdn.telefonica.com/17901/europafm.pls"
+		id="13">
+	</emisora>
+	<emisora name="Flaixbac"
+		url="http://195.55.74.212/flaixbac/shoutcast.flv"
+		id="14">
+	</emisora>
+	<emisora name="Flaix FM"
+		url="http://195.55.74.212/flaix/shoutcast.flv"
+		id="15">
+	</emisora>
+	<emisora name="Formula HIT"
+		url="http://server1.20comunicacion.com:8074/listen.pls"
+		id="16">
+	</emisora>
+	<emisora name="Kiss FM"
+		url="http://kissfm.es.audio1.glb.ipercast.net:8000/kissfm.es/mp3.m3u"
+		id="17">
+	</emisora>
+	<emisora name="Los 40"
+		url="http://provisioning.streamtheworld.com/pls/LOS40.pls"
+		id="18">
+	</emisora>
+	<emisora name="Maxima FM"
+		url="http://provisioning.streamtheworld.com/pls/MAXIMAFM.pls"
+		id="19">
+	</emisora>
+	<emisora name="Rac1"
+		url="http://streaming3.radiocat.net/listen.pls"
+		id="20">
+	</emisora>
+	<emisora name="Rac 105"
+		url="http://streaming105.radiocat.net/listen.pls"
+		id="21">
+	</emisora>	
+</data>
