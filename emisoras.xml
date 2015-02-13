@@ -1,82 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <data>
-	<emisora name="RNE 1" url="http://radiolive.rtve.es/rne.m3u" id="1">
-	</emisora>
-	<emisora name="RNE Clasica"
-		url="http://radiolive.rtve.es/radioclasica.m3u" id="2">
-	</emisora>
-	<emisora name="RNE 3" url="http://radiolive.rtve.es/radio3.m3u"
-		id="3">
-	</emisora>
-	<emisora name="Activa FM"
-		url="http://emisorasmusicales.com:8000/activafm.mp3.m3u" id="4">
-	</emisora>
-	<emisora name="AMC Radio 5"
-		url="http://srv0410.radiostreaming.es/tunein.php/amcradi1/playlist.pls"
-		id="5">
-	</emisora>
-	<emisora name="Cadena 100"
-		url="mms://a14.l12014932013.c120149.l.lm.akamaistream.net/D/14/120149/v0001/reflector:32013"
-		id="6">
-	</emisora>
-	<emisora name="Cadena Dial"
-		url="http://provisioning.streamtheworld.com/pls/CADENADIAL.pls"
-		id="7">
-	</emisora>
-	<emisora name="Cadena Ser"
-		url="http://playerservices.streamtheworld.com/pls/CADENASER.pls"
-		id="8">
-	</emisora>
-	<emisora name="CatRadio"
-		url="http://www.catradio.cat/directes/catradio_http.m3u"
-		id="9">
-	</emisora>
-	<emisora name="CatInfo"
-		url="http://www.catradio.cat/directes/catinfo_http.m3u"
-		id="10">
-	</emisora>
-	<emisora name="CatMusica"
-		url="http://www.catmusica.cat/directes/catmusica_http.m3u"
-		id="11">
-	</emisora>
-	<emisora name="Com Radio"
-		url="http://comradio-streaming.gnuine.com:8100/mac22.m3u"
-		id="12">
-	</emisora>
-	<emisora name="Europa FM"
-		url="http://a3_audio_te_cdn.telefonica.com/17901/europafm.pls"
-		id="13">
-	</emisora>
-	<emisora name="Flaixbac"
-		url="http://195.55.74.212/flaixbac/shoutcast.flv"
-		id="14">
-	</emisora>
-	<emisora name="Flaix FM"
-		url="http://195.55.74.212/flaix/shoutcast.flv"
-		id="15">
-	</emisora>
-	<emisora name="Formula HIT"
-		url="http://server1.20comunicacion.com:8074/listen.pls"
-		id="16">
-	</emisora>
-	<emisora name="Kiss FM"
-		url="http://kissfm.es.audio1.glb.ipercast.net:8000/kissfm.es/mp3.m3u"
-		id="17">
-	</emisora>
-	<emisora name="Los 40"
-		url="http://provisioning.streamtheworld.com/pls/LOS40.pls"
-		id="18">
-	</emisora>
-	<emisora name="Maxima FM"
-		url="http://provisioning.streamtheworld.com/pls/MAXIMAFM.pls"
-		id="19">
-	</emisora>
-	<emisora name="Rac1"
-		url="http://streaming3.radiocat.net/listen.pls"
-		id="20">
-	</emisora>
-	<emisora name="Rac 105"
-		url="http://streaming105.radiocat.net/listen.pls"
-		id="21">
-	</emisora>	
+	<emisora id="1" freq="90.10" name="RNE 1" url="http://radiolive.rtve.es/rne.m3u"/>
+	<emisora id="2" freq="87.70" name=" RAC1 " url="http://streaming3.radiocat.net/listen.pls"/>
+	<emisora id="3" freq="88.10" name=" COM Ràdio " url="http://213.27.152.121:8000/comradio.m3u"/>
+	<emisora id="4" freq="88.50" name=" Ràdio Tele-Taxi " url="http://195.10.10.204/gtt/radioteletaxi2.mp3.m3u"/>
+	<emisora id="5" freq="89.80" name=" Rock FM " url="mms://a1647.l12014631646.c120146.l.lm.akamaistream.net/D/1647/120146/v0001/reflector:31646"/>
+	<emisora id="6" freq="90.10" name=" Boca Ràdio " url="http://estudis.bocaradio.org:8003/listen.pls"/>
+	<emisora id="7" freq="90.30" name=" RNE Radio Clásica " url="http://radiolive.rtve.es/radioclasica.m3u"/>
+	<emisora id="8" freq="90.50" name=" M80 Radio " url="http://provisioning.streamtheworld.com/pls/M80RADIO.pls"/>
+	<emisora id="9" freq="91.00" name=" COM Ràdio " url="http://213.27.152.121:8000/comradio.m3u"/>
+	<emisora id="10" freq="92.00" name=" Catalunya Informació " url="http://www.catradio.cat/directes/catinfo_http.m3u"/>
+	<emisora id="11" freq="93.50" name=" Onda Cero " url="mms://ondacerolivewm.fplive.net/ondacerowmlive-live/oc_madrid"/>
+	<emisora id="12" freq="93.90" name=" Los 40 Principales " url="http://provisioning.streamtheworld.com/pls/LOS40.pls"/>
+	<emisora id="13" freq="94.90" name=" Europa FM " url="http://a3_audio_te_cdn.telefonica.com/17901/europafm.pls"/>
+	<emisora id="14" freq="95.50" name=" Kiss FM " url="rtmp://kissfm.es.flash3.glb.ipercast.net/kissfm.es-live"/>
+	<emisora id="15" freq="96.90" name=" Cadena SER Barcelona " url="http://playerservices.streamtheworld.com/pls/CADENASER.pls"/>
+	<emisora id="16" freq="98.60" name=" RNE Radio 3 " url="http://radiolive.rtve.es/radio3.m3u"/>
+	<emisora id="17" freq="99.40" name=" Cadena Dial " url="http://provisioning.streamtheworld.com/pls/CADENADIAL.pls"/>
+	<emisora id="18" freq="100.00" name=" Cadena 100 " url="mms://a14.l12014932013.c120149.l.lm.akamaistream.net/D/14/120149/v0001/reflector:32013"/>
+	<emisora id="19" freq="101.50" name=" Catalunya Música " url="http://www.catmusica.cat/directes/catmusica_http.m3u"/>
+	<emisora id="20" freq="102.00" name=" COPE Barcelona " url="http://www.cope.es/local/Barcelona/Barcelona"/>
+	<emisora id="21" freq="102.80" name=" Catalunya Ràdio " url="http://www.catradio.cat/directes/catradio_http.m3u"/>
+	<emisora id="22" freq="103.30" name=" Styl FM " url="http://87.98.148.253:7424/listen.pls"/>
+	<emisora id="23" freq="103.50" name=" ONA FM " url="http://82.165.150.2:8000/stream.m3u"/>
+	<emisora id="24" freq="103.80" name=" Rock FM " url="mms://a1647.l12014631646.c120146.l.lm.akamaistream.net/D/1647/120146/v0001/reflector:31646"/>
+	<emisora id="25" freq="103.80" name=" RNE Ràdio 4 " url="http://195.10.10.220/rtve/radio4.mp3.m3u"/>
+	<emisora id="26" freq="104.20" name=" Máxima FM " url="http://provisioning.streamtheworld.com/pls/MAXIMAFM.pls"/>
+	<emisora id="27" freq="105.00" name=" RAC105 " url="http://streaming105.radiocat.net/listen.pls"/>
+	<emisora id="28" freq="105.70" name=" Flaix FM " url="http://195.55.74.212/flaix/shoutcast.flv"/>
+	<emisora id="29" freq="106.10" name=" Ràdio Flaixbac "/>
+	<emisora id="30" freq="106.60" name=" Ràdio Estel " url="http://87.106.252.110:8119/stream.m3u"/>
 </data>
