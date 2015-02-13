@@ -12,11 +12,11 @@ class reproductor:
     def setid(self,id):
         self.id=id
     def display(self):
-        tree = ET.parse('emisoras.xml')
+        tree = ET.parse('lista.xml')
         root = tree.getroot()
         for child in root:
             if int(child.attrib['id']) == int(self.getid()):
-                print child.attrib['id'],"-",child.attrib['name']
+                print child.attrib['id'],"-",child.attrib['freq'],"-",child.attrib['name']
         
     def exit(self):
         p = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
@@ -29,13 +29,13 @@ class reproductor:
         
     def prev(self):
         if self.getid() == 1:
-            self.setid(21)
+            self.setid(30)
         else:
             self.setid(self.getid() - 1)
         self.play()
         
     def next(self):
-        if self.getid() == 21:
+        if self.getid() == 30:
             self.setid(1)
         else:
             self.setid(self.getid() + 1)
