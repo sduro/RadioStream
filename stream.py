@@ -12,7 +12,7 @@ class reproductor:
     def setid(self,id):
         self.id=id
     def display(self):
-        tree = ET.parse('lista.xml')
+        tree = ET.parse('emisoras.xml')
         root = tree.getroot()
         for child in root:
             if int(child.attrib['id']) == int(self.getid()):
