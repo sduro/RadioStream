@@ -20,8 +20,8 @@ LCD_LINE_2 = 0xC0 # LCD RAM address for the 2nd line
 E_PULSE = 0.00005
 E_DELAY = 0.00005
 
-def show():
-    # Main program block
+def show(nombre, freq):
+# Main program block
 GPIO.setmode(GPIO.BCM)       # Use BCM GPIO numbers
 GPIO.setup(LCD_E, GPIO.OUT)  # E
 GPIO.setup(LCD_RS, GPIO.OUT) # RS
@@ -30,21 +30,13 @@ GPIO.setup(LCD_D5, GPIO.OUT) # DB5
 GPIO.setup(LCD_D6, GPIO.OUT) # DB6
 GPIO.setup(LCD_D7, GPIO.OUT) # DB7
 # Initialise display
-lcd_init()
+#lcd_init()
 # Send some test
 lcd_byte(LCD_LINE_1, LCD_CMD)
-lcd_string("Rasbperry Pi")
+lcd_string(nombre)
 lcd_byte(LCD_LINE_2, LCD_CMD)
-lcd_string("Model B")
+lcd_string(freq)
  
-time.sleep(3) # 3 second delay
-# Send some text
-lcd_byte(LCD_LINE_1, LCD_CMD)
-lcd_string("Raspberrypi-spy")
-lcd_byte(LCD_LINE_2, LCD_CMD)
-lcd_string(".co.uk")
-
-time.sleep(20)
  
 def lcd_init():
 # Initialise display

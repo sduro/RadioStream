@@ -2,6 +2,9 @@
 import xml.etree.ElementTree as ET
 import os
 import subprocess, signal
+import lcd
+from lcd.lcd import lcd_init, show
+
 
 class reproductor:
     id = 1
@@ -17,6 +20,7 @@ class reproductor:
         for child in root:
             if int(child.attrib['id']) == int(self.getid()):
                 print child.attrib['id'],"-",child.attrib['freq'],"-",child.attrib['name']
+                show(child.attrib['name'],child.attrib['freq'])
         
     def exit(self):
         p = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
@@ -68,6 +72,7 @@ class reproductor:
 def main():
     r = reproductor(1) 
     r.play()
+    lcd_init()
     while True:
         num=int(raw_input())
         option = {0:r.exit,1:r.play,2:r.prev,3:r.next,4:r.up,5:r.down}
