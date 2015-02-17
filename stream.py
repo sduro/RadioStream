@@ -1,5 +1,5 @@
+#Programa de radio streaming para Raspberry con lcd 16x2
 import xml.etree.ElementTree as ET
-from telnetlib import theNULL
 import os
 import subprocess, signal
 
@@ -74,5 +74,5 @@ def main():
         if num in option:
             option[num]()
 
-if __name__=='__main__':
+if __name__== '__main__':
     main()
