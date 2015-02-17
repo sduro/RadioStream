@@ -28,6 +28,6 @@
 	<emisora id="26" freq="104.20" name=" Máxima FM " url="http://provisioning.streamtheworld.com/pls/MAXIMAFM.pls"/>
 	<emisora id="27" freq="105.00" name=" RAC105 " url="http://streaming105.radiocat.net/listen.pls"/>
 	<emisora id="28" freq="105.70" name=" Flaix FM " url="http://195.55.74.212/flaix/shoutcast.flv"/>
-	<emisora id="29" freq="106.10" name=" Ràdio Flaixbac url="" "/>
+	<emisora id="29" freq="106.10" name=" Ràdio Flaixbac" url="test "/>
 	<emisora id="30" freq="106.60" name=" Ràdio Estel " url="http://87.106.252.110:8119/stream.m3u"/>
 </data>
