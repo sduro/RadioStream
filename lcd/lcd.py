@@ -20,22 +20,7 @@ LCD_LINE_2 = 0xC0 # LCD RAM address for the 2nd line
 E_PULSE = 0.00005
 E_DELAY = 0.00005
 
-def show(nombre, freq):
-    # Main program block
-    GPIO.setmode(GPIO.BCM)       # Use BCM GPIO numbers
-    #GPIO.setup(LCD_E, GPIO.OUT)  # E
-    #GPIO.setup(LCD_RS, GPIO.OUT) # RS
-    #GPIO.setup(LCD_D4, GPIO.OUT) # DB4
-    #GPIO.setup(LCD_D5, GPIO.OUT) # DB5
-    #GPIO.setup(LCD_D6, GPIO.OUT) # DB6
-    #GPIO.setup(LCD_D7, GPIO.OUT) # DB7
-    # Initialise display
-    #lcd_init()
-    # Send some test
-    lcd_byte(LCD_LINE_1, LCD_CMD)
-    lcd_string(nombre)
-    lcd_byte(LCD_LINE_2, LCD_CMD)
-    lcd_string(freq)
+
  
 def lcd_init():
     # Initialise display
@@ -96,3 +81,20 @@ def lcd_byte(bits, mode):
     time.sleep(E_PULSE)
     GPIO.output(LCD_E, False)
     time.sleep(E_DELAY)   
+    
+def lcd_print(nombre, freq):
+    # Main program block
+    GPIO.setmode(GPIO.BCM)       # Use BCM GPIO numbers
+    #GPIO.setup(LCD_E, GPIO.OUT)  # E
+    #GPIO.setup(LCD_RS, GPIO.OUT) # RS
+    #GPIO.setup(LCD_D4, GPIO.OUT) # DB4
+    #GPIO.setup(LCD_D5, GPIO.OUT) # DB5
+    #GPIO.setup(LCD_D6, GPIO.OUT) # DB6
+    #GPIO.setup(LCD_D7, GPIO.OUT) # DB7
+    # Initialise display
+    #lcd_init()
+    # Send some test
+    lcd_byte(LCD_LINE_1, LCD_CMD)
+    lcd_string(nombre)
+    lcd_byte(LCD_LINE_2, LCD_CMD)
+    lcd_string(freq)

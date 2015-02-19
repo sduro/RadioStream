@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 import os
 import subprocess, signal
 import lcd
-from lcd.lcd import lcd_init, show
+from lcd.lcd import lcd_init, lcd_print
 
 
 class reproductor:
@@ -20,7 +20,7 @@ class reproductor:
         for child in root:
             if int(child.attrib['id']) == int(self.getid()):
                 print child.attrib['id'],"-",child.attrib['freq'],"-",child.attrib['name']
-                show(child.attrib['name'],child.attrib['freq'])
+                lcd_print(child.attrib['name'],child.attrib['freq'])
         
     def exit(self):
         p = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
