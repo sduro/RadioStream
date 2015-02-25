@@ -1,28 +1,48 @@
-#Programa de radio streaming para Raspberry con lcd 16x2
+###############################################################
+#Extraccion de datos stream: http://www.listenlive.eu/spain.html
+#descripcion:    Programa de radio streaming para Raspberry 
+#                con lcd 16x2 usando GPIO
+#developer:      sergiduro@gmail.com
+#Inicio:         16/02/2015
+###############################################################
+  
 import xml.etree.ElementTree as ET
 import os
 import subprocess, signal
-import lcd
-from lcd.lcd import lcd_init, lcd_print
+#import lcd
+#from lcd.lcd import lcd_init, lcd_print
 
 
 class reproductor:
+    """
+    Classe reproductor, play/pausa, fordward, rewind.
+        getid: obtiene el numero de la emisora
+        setid: pone el id de la emisora en la reproduccion
+    """
     id = 1
-    def __init__(self,id):
+    def __init__(self,id,items):
         self.id=id
+        self.items=items
+        
     def getid(self):
         return self.id
     def setid(self,id):
         self.id=id
     def display(self):
+        """
+        Muestra por pantalla tanto terminal como LCD la informacion de la emisora que esta emitiendo
+        """
         tree = ET.parse('emisoras.xml')
         root = tree.getroot()
         for child in root:
             if int(child.attrib['id']) == int(self.getid()):
-                print child.attrib['id'],"-",child.attrib['freq'],"-",child.attrib['name']
-                lcd_print(child.attrib['name'],child.attrib['freq'])
+                print child.attrib['id'],"-",child.attrib['freq'],"-",child.attrib['name'] #muestra info en terminal
+                #lcd_print(child.attrib['name'],child.attrib['freq']) #descomentar en version raspi
         
     def exit(self):
+        """
+        Elimina el proceso del VLC
+        """
         p = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
         out, err = p.communicate()
         for line in out.splitlines():
@@ -32,26 +52,30 @@ class reproductor:
                 os.kill(pid, signal.SIGKILL)
         
     def prev(self):
+        """
+        Emisora anterior
+        """
         if self.getid() == 1:
-            self.setid(30)
+            self.setid(self.items)
         else:
             self.setid(self.getid() - 1)
         self.play()
         
     def next(self):
-        if self.getid() == 30:
+        """
+        Siguiente emisora
+        """
+        if self.getid() == self.items:
             self.setid(1)
         else:
             self.setid(self.getid() + 1)
         self.play()
         
-    def up(self):
-        print "up"
-        
-    def down(self):
-        print "down"
-        
     def play(self):
+        """
+        Para el proceso VLC si se esta ejecutando, si no es asi, reproduce el streaming
+        de la emisora que corresponde segun el id cargado actual.
+        """
         p = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
         out, err = p.communicate()
         for line in out.splitlines():
@@ -61,22 +85,26 @@ class reproductor:
         self.display()
         tree = ET.parse('emisoras.xml')
         root = tree.getroot()
+        self.items = len(root)
         for child in root:
             if int(child.attrib['id']) == int(self.getid()):
                 url = child.attrib['url']
-                p = subprocess.Popen(['cvlc','-d', url], stdout=subprocess.PIPE)
+                p = subprocess.Popen(['cvlc','--aout','alsa','-d', url], stdout=subprocess.PIPE)
                 out, err = p.communicate()
-                #subprocess.call(["cvlc", url, "&"])
-                #print child.tag, child.attrib['url'],child.attrib['id']
         
 def main():
-    r = reproductor(1) 
+    """
+    Programa principal con bucle infinito
+    """
+    tree = ET.parse('emisoras.xml')
+    root = tree.getroot()
+    r = reproductor(1,len(root)) 
     r.play()
-    lcd_init()
-    show("Radio","Macuto")
+    #lcd_init()
     while True:
+        """Este bucle es valido para formato terminal, para el GPIO hay que modificar la lectura"""
         num=int(raw_input())
-        option = {0:r.exit,1:r.play,2:r.prev,3:r.next,4:r.up,5:r.down}
+        option = {0:r.exit,1:r.play,2:r.prev,3:r.next}
         if num in option:
             option[num]()
 
