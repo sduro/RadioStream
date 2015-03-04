@@ -1,11 +1,11 @@
-###############################################################
+#################################################################################################
 #Extraccion de datos stream: http://www.listenlive.eu/spain.html
-#descripcion:    Programa de radio streaming para Raspberry 
-#                con lcd 16x2 usando GPIO. Esta emisora sirve para 
-#                raspberry como para arquitectura X86.
+#descripcion:    Programa de radio streaming para Raspberry con lcd 16x2 usando GPIO. 
+#                Esta emisora sirve para raspberry como para arquitectura X86 haciendo las
+#                modificaciones pertinentes con las librerias para evitar errores de compilacion
 #developer:      sergiduro@gmail.com
 #Inicio:         16/02/2015
-###############################################################
+#################################################################################################
   
 import xml.etree.ElementTree as ET
 import os
@@ -13,7 +13,7 @@ import subprocess, signal
 import lcd
 from lcd.lcd import lcd_init, lcd_print
 import buttons
-from buttons.buttonsgpio import press
+from buttons.buttonsgpio import press, buttons_init
 
 class reproductor:
     """
@@ -102,8 +102,8 @@ def main():
     root = tree.getroot()
     r = reproductor(1,len(root)) 
     r.play()
-    
-    #lcd_init()
+    buttons_init()
+    lcd_init()
     while True:
         """Este bucle es valido para formato terminal, para el GPIO hay que modificar la lectura"""
         option = {1:r.play,2:r.prev,3:r.next}

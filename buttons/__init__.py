@@ -6,10 +6,10 @@ REW = 3
 FOW = 4
 
 def press():
-    if GPIO.in(PLAY):
+    if GPIO.input(PLAY):
         return 1
-    if GPIO.in(REW):
+    if GPIO.input(REW):
         return 2
-    if GPIO.in(FOW):
+    if GPIO.input(FOW):
         return 3
     
