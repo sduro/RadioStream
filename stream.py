@@ -108,7 +108,7 @@ def main():
         """Este bucle es valido para formato terminal, para el GPIO hay que modificar la lectura"""
         option = {1:r.play,2:r.prev,3:r.next}
         #num=int(raw_input())
-        num=buttons.press()
+        num=press()
         """inicio de la lectura de GPIO play/rew/foward"""
         if num in option:
             option[num]()

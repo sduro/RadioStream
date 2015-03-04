@@ -1,3 +1,6 @@
+#ruta de la imagen de los pins del GPIO
+#http://www.diverteka.com/wp-content/uploads/2013/04/pic_gpio1_00.jpg
+
 import time
 import RPi.GPIO as GPIO
 # Define GPIO to LCD mapping
