@@ -39,7 +39,7 @@ class reproductor:
         for child in root:
             if int(child.attrib['id']) == int(self.getid()):
                 print child.attrib['id'],"-",child.attrib['freq'],"-",child.attrib['name'] #muestra info en terminal
-                #lcd_print(child.attrib['name'],child.attrib['freq']) #descomentar en version raspi
+                lcd_print(child.attrib['name'],child.attrib['freq']) #descomentar en version raspi
         
     def exit(self):
         """
@@ -106,8 +106,8 @@ def main():
     #lcd_init()
     while True:
         """Este bucle es valido para formato terminal, para el GPIO hay que modificar la lectura"""
-        option = {0:r.exit,1:r.play,2:r.prev,3:r.next}
-        num=int(raw_input())
+        option = {1:r.play,2:r.prev,3:r.next}
+        #num=int(raw_input())
         num=buttons.press()
         """inicio de la lectura de GPIO play/rew/foward"""
         if num in option:
