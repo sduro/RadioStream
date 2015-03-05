@@ -5,6 +5,8 @@
 #                modificaciones pertinentes con las librerias para evitar errores de compilacion
 #developer:      sergiduro@gmail.com
 #Inicio:         16/02/2015
+#cvlc other options:
+#--volume <integer> sets the level of audio output (between 0 and 1024) 
 #################################################################################################
   
 import xml.etree.ElementTree as ET
@@ -78,25 +80,28 @@ class reproductor:
         Para el proceso VLC si se esta ejecutando, si no es asi, reproduce el streaming
         de la emisora que corresponde segun el id cargado actual.
         """
+        runvlc = 0
         p = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
         out, err = p.communicate()
         for line in out.splitlines():
             if 'vlc' in line:
                 pid = int(line.split(None, 1)[0])
                 os.kill(pid, signal.SIGKILL)
-        self.display()
-        tree = ET.parse('emisoras.xml')
-        root = tree.getroot()
-        self.items = len(root)
-        for child in root:
-            if int(child.attrib['id']) == int(self.getid()):
-                url = child.attrib['url']
-                p = subprocess.Popen(['cvlc','--aout','alsa','-d', url], stdout=subprocess.PIPE)
-                out, err = p.communicate()
+                runvlc = 1
+        if runvlc == 0: 
+            self.display()
+            tree = ET.parse('emisoras.xml')
+            root = tree.getroot()
+            self.items = len(root)
+            for child in root:
+                if int(child.attrib['id']) == int(self.getid()):
+                    url = child.attrib['url']
+                    p = subprocess.Popen(['cvlc','--aout','alsa','-d', url, '>','/dev/null'], stdout=subprocess.PIPE)
+                    out, err = p.communicate()
         
 def main():
     """
-    Programa principal con bucle infinito
+    Programa principal con bucle infinito con lectura continua del GPIO
     """
     tree = ET.parse('emisoras.xml')
     root = tree.getroot()
@@ -104,6 +109,7 @@ def main():
     r.play()
     buttons_init()
     lcd_init()
+    lcd_print("Iniciando", "Emisora")
     while True:
         """Este bucle es valido para formato terminal, para el GPIO hay que modificar la lectura"""
         option = {1:r.play,2:r.prev,3:r.next}
