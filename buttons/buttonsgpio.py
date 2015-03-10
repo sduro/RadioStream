@@ -5,6 +5,7 @@
 #FOW = 4 #CLK
 #ejemplos de GPIO In/out
 #http://tipsraspberry.blogspot.com.es/2014/02/gpio-entradas-y-salidas-en-python.html
+#boton rew y fow a la vez se para la reproduccion
 
 import time
 import RPi.GPIO as GPIO
@@ -20,9 +21,11 @@ def buttons_init():
     GPIO.setup(FOW, GPIO.IN,pull_up_down=GPIO.PUD_DOWN)  # fow
       
 def press():
-    if GPIO.input(PLAY):
+    if GPIO.input(PLAY) == True  & GPIO.input(REW)== False & GPIO.input(FOW)==False:
         return 1
-    if GPIO.input(REW):
+    if GPIO.input(PLAY) == False  & GPIO.input(REW)== True & GPIO.input(FOW)==False:
         return 2
-    if GPIO.input(FOW):
+    if GPIO.input(PLAY) == False  & GPIO.input(REW)== False & GPIO.input(FOW)==True:
         return 3
+    if GPIO.input(PLAY) == False  & GPIO.input(REW)== True & GPIO.input(FOW)==True:
+        return 4

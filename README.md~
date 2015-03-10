@@ -2,19 +2,25 @@ RadioStream
 ==========
 Funcionamiento del programa es el siguiente. 
 Usa el fichero emisoras.xml, que contiene todas las emisoras españa de streaming en el formato xml. 
-El formato es <id> <nombre><frequencia><url>.
- 
+Para el funcionamiento de la radio:
+```shell
+sudo python stream.py
+´´´
 
-
-stream.py 
+Configuración
 -------------
-Programa necesario para escuchar emisoras stream por la raspberry
+El programa requiere ejecutarse en modo root hay que cambiar un parametro del vlc binario, a continuación se describe el procedimiento de cambio.
+Para que VLC funcione en modo root hay que editar el fichero bin, con un editor hexadecimal.
+*sudo apt-get install hexedit
+*hexedit /usr/bin/vlc
+Buscar una cadena donde pone geteuid y cambiarlo por getppid, de esta manera se podra ejecutar el VLC en modo root.
 
 emisoras.xml 
 -----------------
-Fichero de configuracion de emisoras.
+Fichero de configuracion de emisoras. En este fichero se puedn añadir o quitar las distintas emisoras de radio siguiendo la correcta configuración.
+por ejemplo:
+```xml
+<emisora id="1" freq="90.10" name="RNE 1" url="http://radiolive.rtve.es/rne.m3u"/>
+´´´
 
-LCD.py
-------
-Fichero donde contiene todas las funciones necesarias para mostrar la informacion por el LCD 16x2
 

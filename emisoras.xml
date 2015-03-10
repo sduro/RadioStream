@@ -19,5 +19,5 @@
 	<emisora id="17" freq="106.60" name=" Spectrum FM " url="http://eu1.reliastream.com/tunein.php/spectrum/playlist.pls"/>
 	<emisora id="18" freq="97.50" name="Radio Montealegre" url="http://www.radiomontealegre.es/directo/directo.m3u"/>
 	<emisora id="19" freq="95.20" name="RadioOro Malaga" url="http://92.48.107.35:8002/listen.pls"/>
-	<emisora id="20" freq="95.20" name="XtraFM CostaBlanca" url="http://player.xtra.fm/blanca/listen.m3u"/>
+	<emisora id="20" freq="92.70" name="XtraFM CostaBlanca" url="http://player.xtra.fm/blanca/listen.m3u"/>
 </data>

@@ -12,6 +12,11 @@
 import xml.etree.ElementTree as ET
 import os
 import subprocess, signal
+
+"""
+Para la version de X86 hay que comentar los imports lcd y buttons ya
+que son funciones especificas de la Raspberry y GPIO
+"""
 import lcd
 from lcd.lcd import lcd_init, lcd_print
 import buttons
@@ -29,9 +34,17 @@ class reproductor:
         self.items=items
         
     def getid(self):
+        """
+        Devuelve el valor de la cancion
+        """
         return self.id
+    
     def setid(self,id):
+        """
+        Pone el valor de la cancion en la variable id
+        """
         self.id=id
+        
     def display(self):
         """
         Muestra por pantalla tanto terminal como LCD la informacion de la emisora que esta emitiendo
@@ -41,19 +54,7 @@ class reproductor:
         for child in root:
             if int(child.attrib['id']) == int(self.getid()):
                 print child.attrib['id'],"-",child.attrib['freq'],"-",child.attrib['name'] #muestra info en terminal
-                lcd_print(child.attrib['name'],child.attrib['freq']) #descomentar en version raspi
-        
-    def exit(self):
-        """
-        Elimina el proceso del VLC
-        """
-        p = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
-        out, err = p.communicate()
-        for line in out.splitlines():
-            if 'vlc' in line:
-                pid = int(line.split(None, 1)[0])
-                print pid
-                os.kill(pid, signal.SIGKILL)
+                lcd_print(child.attrib['name'],child.attrib['freq']) #descomentar en version raspi /comentar en la version x86
         
     def prev(self):
         """
@@ -74,30 +75,35 @@ class reproductor:
         else:
             self.setid(self.getid() + 1)
         self.play()
-        
-    def play(self):
+     
+    def stop(self):
         """
         Para el proceso VLC si se esta ejecutando, si no es asi, reproduce el streaming
         de la emisora que corresponde segun el id cargado actual.
         """
-        runvlc = 0
         p = subprocess.Popen(['ps', '-A'], stdout=subprocess.PIPE)
         out, err = p.communicate()
         for line in out.splitlines():
             if 'vlc' in line:
                 pid = int(line.split(None, 1)[0])
                 os.kill(pid, signal.SIGKILL)
-                runvlc = 1
-        if runvlc == 0: 
-            self.display()
-            tree = ET.parse('emisoras.xml')
-            root = tree.getroot()
-            self.items = len(root)
-            for child in root:
-                if int(child.attrib['id']) == int(self.getid()):
-                    url = child.attrib['url']
-                    p = subprocess.Popen(['cvlc','--aout','alsa','-d', url, '>','/dev/null'], stdout=subprocess.PIPE)
-                    out, err = p.communicate()
+        lcd_print("RasdioStream", "Stop")
+                
+    def play(self):
+        """
+        Para el proceso VLC si se esta ejecutando, si no es asi, reproduce el streaming
+        de la emisora que corresponde segun el id cargado actual.
+        """
+        self.stop()
+        self.display()
+        tree = ET.parse('emisoras.xml')
+        root = tree.getroot()
+        self.items = len(root)
+        for child in root:
+            if int(child.attrib['id']) == int(self.getid()):
+                url = child.attrib['url']
+                p = subprocess.Popen(['cvlc','--aout','alsa','-d', url, '>','/dev/null'], stdout=subprocess.PIPE)
+                out, err = p.communicate()
         
 def main():
     """
@@ -111,11 +117,9 @@ def main():
     lcd_init()
     lcd_print("Iniciando", "Emisora")
     while True:
-        """Este bucle es valido para formato terminal, para el GPIO hay que modificar la lectura"""
-        option = {1:r.play,2:r.prev,3:r.next}
-        #num=int(raw_input())
-        num=press()
-        """inicio de la lectura de GPIO play/rew/foward"""
+        option = {1:r.play,2:r.prev,3:r.next,4:r.stop}
+        #num=int(raw_input())     #comentar para la version raspi / Descomentar esta linea para la version x86
+        num=press()  #comentar esta linea para la version x86 /Descomentar para la version raspi
         if num in option:
             option[num]()
 
