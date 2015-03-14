@@ -14,7 +14,7 @@
 	<emisora id="12" freq="99.40" name="Cadena Dial " url="http://provisioning.streamtheworld.com/pls/CADENADIAL.pls"/>
 	<emisora id="13" freq="101.50" name="Catalunya Música " url="http://www.catmusica.cat/directes/catmusica_http.m3u"/>
 	<emisora id="14" freq="102.80" name="Catalunya Ràdio " url="http://www.catradio.cat/directes/catradio_http.m3u"/>
-	<emisora id="15" freq="104.20" name="Máxima FM " url="http://provisioning.streamtheworld.com/pls/MAXIMAFM.pls"/>
+	<emisora id="15" freq="104.20" name="Maxima FM " url="http://provisioning.streamtheworld.com/pls/MAXIMAFM.pls"/>
 	<emisora id="16" freq="105.00" name="RAC105 " url="http://streaming105.radiocat.net/listen.pls"/>
 	<emisora id="17" freq="106.60" name="Spectrum FM " url="http://eu1.reliastream.com/tunein.php/spectrum/playlist.pls"/>
 	<emisora id="18" freq="97.50" name="Radio Montealegre" url="http://www.radiomontealegre.es/directo/directo.m3u"/>
