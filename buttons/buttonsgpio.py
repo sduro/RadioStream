@@ -22,10 +22,13 @@ def buttons_init():
       
 def press():
     if GPIO.input(PLAY) == True  & GPIO.input(REW)== False & GPIO.input(FOW)==False:
-        return 1
+        time.sleep(3)
+        if GPIO.input(PLAY) == True  & GPIO.input(REW)== False & GPIO.input(FOW)==False:
+            return 4
+        else:
+            return 1
     if GPIO.input(PLAY) == False  & GPIO.input(REW)== True & GPIO.input(FOW)==False:
         return 2
     if GPIO.input(PLAY) == False  & GPIO.input(REW)== False & GPIO.input(FOW)==True:
         return 3
-    if GPIO.input(PLAY) == False  & GPIO.input(REW)== True & GPIO.input(FOW)==True:
-        return 4
+    
