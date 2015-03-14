@@ -12,6 +12,7 @@
 import xml.etree.ElementTree as ET
 import os
 import subprocess, signal
+import time
 
 """
 Para la version de X86 hay que comentar los imports lcd y buttons ya
@@ -115,13 +116,13 @@ def main():
     """
     Programa principal con bucle infinito con lectura continua del GPIO
     """
-    tree = ET.parse('emisoras.xml')
-    root = tree.getroot()
-    r = reproductor(1,len(root)) 
-    r.play()
     buttons_init()
     lcd_init()
-    lcd_print("Iniciando", "Emisora")
+    lcd_print("Iniciando", "Emisora")    
+    tree = ET.parse('emisoras.xml')
+    root = tree.getroot()
+    r = reproductor(1,len(root))     
+    r.play()    
     option = {1:r.play,2:r.prev,3:r.next,4:r.exit}
     try:
         while True:
