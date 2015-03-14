@@ -87,6 +87,12 @@ class reproductor:
             if 'vlc' in line:
                 pid = int(line.split(None, 1)[0])
                 os.kill(pid, signal.SIGKILL)
+
+    def exit(self):
+        """
+        Funcion de salida, cierra el proceso de VLC y queda a la espera.
+        """
+        self.stop()
         lcd_print("RasdioStream", "Stop")
                 
     def play(self):
@@ -102,7 +108,7 @@ class reproductor:
         for child in root:
             if int(child.attrib['id']) == int(self.getid()):
                 url = child.attrib['url']
-                p = subprocess.Popen(['cvlc','--aout','alsa','-d', url, '>','/dev/null'], stdout=subprocess.PIPE)
+                p = subprocess.Popen(['cvlc','--aout','alsa','volume','300','-d', url, '>','/dev/null'], stdout=subprocess.PIPE)
                 out, err = p.communicate()
         
 def main():
@@ -116,12 +122,16 @@ def main():
     buttons_init()
     lcd_init()
     lcd_print("Iniciando", "Emisora")
-    while True:
-        option = {1:r.play,2:r.prev,3:r.next,4:r.stop}
-        #num=int(raw_input())     #comentar para la version raspi / Descomentar esta linea para la version x86
-        num=press()  #comentar esta linea para la version x86 /Descomentar para la version raspi
-        if num in option:
-            option[num]()
-
+    option = {1:r.play,2:r.prev,3:r.next,4:r.exit}
+    try:
+        while True:
+            #num=int(raw_input())     #comentar para la version raspi / Descomentar esta linea para la version x86
+            num=press()  #comentar esta linea para la version x86 /Descomentar para la version raspi
+            if num in option:
+                option[num]()
+            time.sleep(0.01)
+    except KeyboardInterrupt:
+        GPIO.cleanup()
+           
 if __name__== '__main__':
     main()
