@@ -31,9 +31,9 @@ def press(self):
             return 4
         else:
             return 1
-        if status_play == False  &  status_rew == True & status_fow == False:
+    if status_rew == True & GPIO.input(REW)== True:
         return 2
     
-    if status_play == False  & status_rew == False & status_fow == True:
+    if status_fow == True & GPIO.input(FOW)==True:
         return 3
     
