@@ -20,15 +20,20 @@ def buttons_init():
     GPIO.setup(REW, GPIO.IN,pull_up_down=GPIO.PUD_DOWN)  # rew
     GPIO.setup(FOW, GPIO.IN,pull_up_down=GPIO.PUD_DOWN)  # fow
       
-def press():
-    if GPIO.input(PLAY) == True  & GPIO.input(REW)== False & GPIO.input(FOW)==False:
+def press(self):
+    status_play = GPIO.input(PLAY)
+    status_rew = GPIO.input(REW)
+    status_fow = GPIO.input(FOW)
+    
+    if status_play == True:
         time.sleep(3)
-        if GPIO.input(PLAY) == True  & GPIO.input(REW)== False & GPIO.input(FOW)==False:
+        if GPIO.input(PLAY) == True & status_play == True:
             return 4
         else:
             return 1
-    if GPIO.input(PLAY) == False  & GPIO.input(REW)== True & GPIO.input(FOW)==False:
+        if status_play == False  &  status_rew == True & status_fow == False:
         return 2
-    if GPIO.input(PLAY) == False  & GPIO.input(REW)== False & GPIO.input(FOW)==True:
+    
+    if status_play == False  & status_rew == False & status_fow == True:
         return 3
     
