@@ -24,5 +24,4 @@ por ejemplo:
 ```xml
 <emisora id="1" freq="90.10" name="RNE 1" url="http://radiolive.rtve.es/rne.m3u"/>
 ´´´
-
-[https://lh3.googleusercontent.com/vfFiXYoxkmT8Qn8UkmrEGWoMtI7BPR6NEHyoGYC9MNKw=w1161-h653-no](https://lh3.googleusercontent.com/vfFiXYoxkmT8Qn8UkmrEGWoMtI7BPR6NEHyoGYC9MNKw=w1161-h653-no)
+![FormatFactoryIMG_20150312_21484.jpg](https://bitbucket.org/repo/Knp4Bg/images/1707184735-FormatFactoryIMG_20150312_21484.jpg)
