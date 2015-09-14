@@ -2,7 +2,7 @@
 <data>
 	<emisora id="1" freq="90.10" name="RNE 1" url="http://radiolive.rtve.es/rne.m3u"/>
 	<emisora id="2" freq="87.70" name="RAC1 " url="http://streaming3.radiocat.net/listen.pls"/>
-	<emisora id="3" freq="89.80" name="Rock FM " url="http://www.rockyfm.com/listen.pls"/>
+	<emisora id="3" freq="89.80" name="Rock FM " url="http://rockfm.cope.stream.flumotion.com/cope/rockfm.mp3.m3u"/>
 	<emisora id="4" freq="90.30" name="RNE Radio Clásica " url="http://radiolive.rtve.es/radioclasica.m3u"/>
 	<emisora id="5" freq="90.50" name="M80 Radio " url="http://provisioning.streamtheworld.com/pls/M80RADIO.pls"/>
 	<emisora id="6" freq="92.00" name="Catalunya Informació " url="http://www.catradio.cat/directes/catinfo_http.m3u"/>
@@ -20,4 +20,6 @@
 	<emisora id="18" freq="97.50" name="Radio Montealegre" url="http://www.radiomontealegre.es/directo/directo.m3u"/>
 	<emisora id="19" freq="95.20" name="RadioOro Malaga" url="http://92.48.107.35:8002/listen.pls"/>
 	<emisora id="20" freq="92.70" name="XtraFM CostaBlanca" url="http://player.xtra.fm/blanca/listen.m3u"/>
+	<emisora id="21" freq="89.80" name="Rocky FM " url="http://www.rockyfm.com/listen.pls"/>
+	
 </data>
