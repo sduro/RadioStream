@@ -3,7 +3,6 @@
 	<emisora id="1" freq="90.10" name="RNE 1" url="http://radiolive.rtve.es/rne.m3u"/>
 	<emisora id="2" freq="87.70" name="RAC1 " url="http://streaming3.radiocat.net/listen.pls"/>
 	<emisora id="3" freq="89.80" name="Rock FM " url="http://rockfm.cope.stream.flumotion.com/cope/rockfm.mp3.m3u"/>
-	<emisora id="4" freq="90.30" name="RNE Radio Clásica " url="http://radiolive.rtve.es/radioclasica.m3u"/>
 	<emisora id="5" freq="90.50" name="M80 Radio " url="http://provisioning.streamtheworld.com/pls/M80RADIO.pls"/>
 	<emisora id="6" freq="92.00" name="Catalunya Informació " url="http://www.catradio.cat/directes/catinfo_http.m3u"/>
 	<emisora id="7" freq="93.50" name="Onda Cero " url="http://icecast-streaming.nice264.com/ondacero"/>
@@ -16,6 +15,8 @@
 	<emisora id="14" freq="102.80" name="Catalunya Ràdio " url="http://www.catradio.cat/directes/catradio_http.m3u"/>
 	<emisora id="15" freq="104.20" name="Maxima FM " url="http://provisioning.streamtheworld.com/pls/MAXIMAFM.pls"/>
 	<emisora id="16" freq="105.00" name="RAC105 " url="http://streaming105.radiocat.net/listen.pls"/>
+	<emisora id="15" freq="105.70" name="Flaix FM " url="http://195.55.74.208/flaix/shoutcastmp3.mp3?lang=es-ES%2ces%3bq%3d0.8%2cca%3bq%3d0.6%2cen%3bq%3d0.4%2cfr%3bq%3d0.2%2cit%3bq%3d0.2"/>
+	<emisora id="14" freq="106.10" name="Flaixbac " url="http://195.55.74.210/flaix/shoutcast2.mp3?lang=es-ES%2ces%3bq%3d0.8%2cca%3bq%3d0.6%2cen%3bq%3d0.4%2cfr%3bq%3d0.2%2cit%3bq%3d0.2"/>	
 	<emisora id="17" freq="106.60" name="Spectrum FM " url="http://eu1.reliastream.com/tunein.php/spectrum/playlist.pls"/>
 	<emisora id="18" freq="97.50" name="Radio Montealegre" url="http://www.radiomontealegre.es/directo/directo.m3u"/>
 	<emisora id="19" freq="95.20" name="RadioOro Malaga" url="http://92.48.107.35:8002/listen.pls"/>
