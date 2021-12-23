@@ -33,4 +33,4 @@ Captura
 
 Video
 -----
-[![] mq2.jpg](https://youtu.be/D2N3VFITK_0 "Click To watch")
+[![](mq2.jpg)](https://youtu.be/D2N3VFITK_0 "Click To watch")
