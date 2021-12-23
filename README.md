@@ -28,3 +28,4 @@ por ejemplo:
 Primer ejemplo de RaspberryPI + Servidor
 ----------------------------------------
 [FormatFactoryIMG_20150312_21484.jpg](https://bitbucket.org/repo/Knp4Bg/images/1707184735-FormatFactoryIMG_20150312_21484.jpg)
+<img src="https://bitbucket.org/repo/Knp4Bg/images/1707184735-FormatFactoryIMG_20150312_21484.jpg">
