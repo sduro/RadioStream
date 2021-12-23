@@ -27,9 +27,10 @@ por ejemplo:
 
 Primer ejemplo de RaspberryPI + Servidor
 ----------------------------------------
-[FormatFactoryIMG_20150312_21484.jpg](https://photos.app.goo.gl/2HWkJDmE3DCK6jaM6)
+Captura
+-------
 <img src="https://bitbucket.org/repo/Knp4Bg/images/1707184735-FormatFactoryIMG_20150312_21484.jpg">
 
-
-[FormatFactoryIMG_20150312_21484.jpg](https://youtu.be/D2N3VFITK_0)
-(https://youtu.be/D2N3VFITK_0 "mola")
+Video
+-----
+![](https://youtu.be/D2N3VFITK_0)
