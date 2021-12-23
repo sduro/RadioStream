@@ -3,9 +3,9 @@ RadioStream
 Funcionamiento del programa es el siguiente. 
 Usa el fichero emisoras.xml, que contiene todas las emisoras españa de streaming en el formato xml. 
 Para el funcionamiento de la radio:
-```shell
+'''shell
 sudo python stream.py
-´´´
+'''
 En el codigo fuente, hay comentarios para poder usar la rádio en la plataforma x86 (pc) además de la raspberry (ARM).
 
 
@@ -21,10 +21,10 @@ emisoras.xml
 -----------------
 Fichero de configuracion de emisoras. En este fichero se puedn añadir o quitar las distintas emisoras de radio siguiendo la correcta configuración.
 por ejemplo:
-```xml
+````xml
 <emisora id="1" freq="90.10" name="RNE 1" url="http://radiolive.rtve.es/rne.m3u"/>
-´´´
+````
 
 Primer ejemplo de RaspberryPI + Servidor
 ----------------------------------------
-![FormatFactoryIMG_20150312_21484.jpg](https://bitbucket.org/repo/Knp4Bg/images/1707184735-FormatFactoryIMG_20150312_21484.jpg)
+[FormatFactoryIMG_20150312_21484.jpg](https://bitbucket.org/repo/Knp4Bg/images/1707184735-FormatFactoryIMG_20150312_21484.jpg)
