@@ -5,6 +5,7 @@
 #                modificaciones pertinentes con las librerias para evitar errores de compilacion
 #developer:      sergiduro@gmail.com
 #Inicio:         16/02/2015
+#Update:         09/01/2023
 #cvlc other options:
 #--volume <integer> sets the level of audio output (between 0 and 1024) 
 #################################################################################################
