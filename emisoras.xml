@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <data>
-	<emisora id="1" freq="90.10" name="RNE 1" url="http://radiolive.rtve.es/rne.m3u"/>
+	<emisora id="1" freq="92.50" name="iCat" url="https://shoutcast.ccma.cat/ccma/icatHD.mp3"/>
+	<emisora id="22" freq="90.10" name="RNE 1" url="http://radiolive.rtve.es/rne.m3u"/>
 	<emisora id="2" freq="87.70" name="RAC1 " url="http://streaming3.radiocat.net/listen.pls"/>
 	<emisora id="3" freq="89.80" name="Rock FM " url="http://rockfm.cope.stream.flumotion.com/cope/rockfm.mp3.m3u"/>
 	<emisora id="5" freq="90.50" name="M80 Radio " url="http://provisioning.streamtheworld.com/pls/M80RADIO.pls"/>
