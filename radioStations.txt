@@ -1,0 +1,6 @@
+iCat
+http://shoutcast.ccma.cat/ccma/icatHD.mp3
+Catalunya Radio
+https://shoutcast.ccma.cat/ccma/catalunyaradioHD.mp3
+Flaixbac
+https://flaixbac.streaming-pro.com:8007/flaixbac.aacp
